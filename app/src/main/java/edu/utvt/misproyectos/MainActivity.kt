@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import edu.utvt.misproyectos.ui.theme.MisProyectosTheme
+import edu.utvt.misproyectos.view.ExampleView
 import edu.utvt.misproyectos.view.MainView
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +23,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainView()
+                    //MainView()
+                    ExampleView()
                 }
             }
         }
@@ -34,6 +36,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     MisProyectosTheme {
-        MainView()
+        //MainView()
+        ExampleView()
     }
 }
