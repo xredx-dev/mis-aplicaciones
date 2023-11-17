@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun MainTitle(
-    message:String = "Default",
+    message:String = "Aplicaciones",
     fontSize: TextUnit = 30.sp,
     fontWeight: FontWeight = FontWeight.Bold,
     modifier: Modifier = Modifier.padding(10.dp)
@@ -49,7 +49,7 @@ fun MainButton(
 
 @Composable
 fun GoBackButtonIcon(
-    description:String = "",
+    description:String = "Default",
     color: Color = Color.White,
     icon:ImageVector = Icons.Default.ArrowBack,
     onClick: ()-> Unit

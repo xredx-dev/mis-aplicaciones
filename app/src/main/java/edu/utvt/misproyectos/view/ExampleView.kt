@@ -12,6 +12,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import edu.utvt.misproyectos.components.GoBackButtonIcon
 import edu.utvt.misproyectos.components.MainButton
 import edu.utvt.misproyectos.components.MainTitle
@@ -20,35 +21,35 @@ import edu.utvt.misproyectos.components.TitleBar
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExampleView(){
+fun ExampleView(navController: NavController){
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { TitleBar() },
+                title = { TitleBar("Vista Simple") },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.tertiaryContainer
                 ),
                 navigationIcon = {
                     GoBackButtonIcon {
-                        println("Regresar")
+                        navController.popBackStack()
                     }
                 }
             )
         }
     ) {
-        ContentDetails()
+        ContentDetails(navController)
     }
 }
 @Composable
-private fun ContentDetails(){
+private fun ContentDetails(navController: NavController){
     Column (
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        MainTitle()
-        MainButton {
-            println("ExampleView")
+        MainTitle("Boton para regresar")
+        MainButton("regresar") {
+           navController.popBackStack()
         }
     }
 }

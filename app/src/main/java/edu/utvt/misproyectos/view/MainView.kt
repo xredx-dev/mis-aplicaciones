@@ -13,6 +13,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import edu.utvt.misproyectos.components.BottomTitleBar
 import edu.utvt.misproyectos.components.CustomFloatingActionButton
 import edu.utvt.misproyectos.components.MainButton
@@ -22,11 +23,11 @@ import edu.utvt.misproyectos.components.TitleBar
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainView(){
+fun MainView(navController: NavController){
     Scaffold (
         topBar = {
             CenterAlignedTopAppBar(
-                title = { TitleBar()},
+                title = { TitleBar("Mis aplicaciones en Android")},
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer
                 )
@@ -43,25 +44,25 @@ fun MainView(){
         },
 
         floatingActionButton = {
-            CustomFloatingActionButton()
+            CustomFloatingActionButton("Vista Simple")
         }
 
     ){
-        ContentDetails()
+        ContentDetails(navController)
     }
 }
 
 @Composable
-private fun ContentDetails(){
+private fun ContentDetails(navController: NavController){
 
     Column(
         modifier =  Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        MainTitle()
-        MainButton {
-            println("Hola Mundo")
+        MainTitle("Aplicaciones")
+        MainButton("vista simple") {
+            navController.navigate("exampleView")
         }
     }
 }

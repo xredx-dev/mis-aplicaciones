@@ -13,8 +13,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun TitleBar(
-    modifier:Modifier = Modifier,
     message: String = "Default",
+    modifier:Modifier = Modifier,
     color:Color = MaterialTheme.colorScheme.primary
 
 ){
@@ -23,10 +23,10 @@ fun TitleBar(
 
 @Composable
 fun BottomTitleBar(
+    message: String = "Default",
     modifier:Modifier = Modifier
         .fillMaxWidth()
         .padding(10.dp),
-    message: String = "Default",
     color: Color = MaterialTheme.colorScheme.primary,
     textAlign: TextAlign = TextAlign.End
 ){Text( text = message, color = color, textAlign = textAlign,modifier = modifier )}

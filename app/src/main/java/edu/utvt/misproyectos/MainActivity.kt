@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import edu.utvt.misproyectos.navigate.Navigation
 import edu.utvt.misproyectos.ui.theme.MisProyectosTheme
 import edu.utvt.misproyectos.view.ExampleView
 import edu.utvt.misproyectos.view.MainView
@@ -24,7 +25,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //MainView()
-                    ExampleView()
+                    //ExampleView()
+                    Navigation()
                 }
             }
         }
@@ -37,6 +39,7 @@ class MainActivity : ComponentActivity() {
 fun GreetingPreview() {
     MisProyectosTheme {
         //MainView()
-        ExampleView()
+        //ExampleView()
+        Navigation()
     }
 }
