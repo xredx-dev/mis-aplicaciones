@@ -46,7 +46,6 @@ fun MainView(navController: NavController){
         floatingActionButton = {
             CustomFloatingActionButton("Vista Simple")
         }
-
     ){
         ContentDetails(navController)
     }
@@ -54,7 +53,6 @@ fun MainView(navController: NavController){
 
 @Composable
 private fun ContentDetails(navController: NavController){
-
     Column(
         modifier =  Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -63,6 +61,9 @@ private fun ContentDetails(navController: NavController){
         MainTitle("Aplicaciones")
         MainButton("vista simple") {
             navController.navigate("exampleView")
+        }
+        MainButton("contador") {
+            navController.navigate("countView")
         }
     }
 }

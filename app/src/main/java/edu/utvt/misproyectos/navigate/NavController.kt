@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import edu.utvt.misproyectos.view.CountView
 import edu.utvt.misproyectos.view.ExampleView
 import edu.utvt.misproyectos.view.MainView
 
@@ -16,6 +17,9 @@ fun Navigation(){
         }
         composable("exampleView"){
             ExampleView(navController = navController)
+        }
+        composable("countView"){
+            CountView(navController = navController)
         }
     }
 }
